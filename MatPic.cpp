@@ -61,6 +61,21 @@ unsigned char BL(int i,int j)
   return (i+j)/4%256;
 }
 
+unsigned char RD(int i,int j)
+{
+	return i&&j?(i%j)&(j%i):0;
+}
+ 
+unsigned char GR(int i,int j)
+{
+	return i&&j?(i%j)+(j%i):0;
+}
+ 
+unsigned char BL(int i,int j)
+{
+	return i&&j?(i%j)|(j%i):0;
+}
+
 //第三个 棋盘
 unsigned char RD(int i,int j)
 {
