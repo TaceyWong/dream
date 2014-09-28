@@ -176,17 +176,67 @@ static char c[1024][1024];return!c[i][j]?c[i][j]=!r(999)?r(256):BL((i+r(2))%1024
 }
 
 //波浪效果
+//①
 unsigned char RD(int i,int j){
-float s=3./(j+99);
-float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM)*35)*s;
-return (int((i+DIM)*s+y)%2+int((DIM*2-i)*s+y)%2)*127;
+    float s=3./(j+99);
+    return (int((i+DIM)*s+j*s)%2+int((DIM*2-i)*s+j*s)%2)*127;
 }
- 
 unsigned char GR(int i,int j){
-float s=3./(j+99);
-float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM)*35)*s;
-return (int(5*((i+DIM)*s+y))%2+int(5*((DIM*2-i)*s+y))%2)*127;
+    float s=3./(j+99);
+    return (int((i+DIM)*s+j*s)%2+int((DIM*2-i)*s+j*s)%2)*127;
 }
+unsigned char BL(int i,int j){
+    float s=3./(j+99);
+    return (int((i+DIM)*s+j*s)%2+int((DIM*2-i)*s+j*s)%2)*127;
+}
+//②
+unsigned char RD(int i,int j){
+    float s=3./(j+99);
+    float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM)*35)*s;
+    return (int((i+DIM)*s+y)%2+int((DIM*2-i)*s+y)%2)*127;
+}
+unsigned char GR(int i,int j){
+    float s=3./(j+99);
+    float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM)*35)*s;
+    return (int((i+DIM)*s+y)%2+int((DIM*2-i)*s+y)%2)*127;
+}
+unsigned char BL(int i,int j){
+    float s=3./(j+99);
+    float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM)*35)*s;
+    return (int((i+DIM)*s+y)%2+int((DIM*2-i)*s+y)%2)*127;
+}
+
+//③
+unsigned char RD(int i,int j){
+    float s=3./(j+99);
+    float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM)*35)*s;
+    return (int((i+DIM)*s+y)%2+int((DIM*2-i)*s+y)%2)*127;
+}
+unsigned char GR(int i,int j){
+    float s=3./(j+99);
+    float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM)*35)*s;
+    return (int(5*((i+DIM)*s+y))%2+int(5*((DIM*2-i)*s+y))%2)*127;
+}
+unsigned char BL(int i,int j){
+    float s=3./(j+99);
+    float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM)*35)*s;
+    return (int(29*((i+DIM)*s+y))%2+int(29*((DIM*2-i)*s+y))%2)*127;
+}
+
+//④
+unsigned char RD(int i,int j){
+#define P 6.03
+float s=3./(j+250),y=(j+sin((i*i+_sq(j-700)*5)/100./DIM+P)*15)*s;return (int((i+DIM)*s+y)%2+int((DIM*2-i)*s+y)%2)*127;}
+
+unsigned char GR(int i,int j){
+float s=3./(j+250);
+float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM+P)*15)*s;
+return (int(5*((i+DIM)*s+y))%2+int(5*((DIM*2-i)*s+y))%2)*127;}
+
+unsigned char BL(int i,int j){
+float s=3./(j+250);
+float y=(j+sin((i*i+_sq(j-700)*5)/100./DIM+P)*15)*s;
+return (int(29*((i+DIM)*s+y))%2+int(29*((DIM*2-i)*s+y))%2)*127;}
  
 unsigned char BL(int i,int j){
 float s=3./(j+99);
