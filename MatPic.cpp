@@ -201,3 +201,14 @@ return (int(29*((i+DIM)*s+y))%2+int(29*((DIM*2-i)*s+y))%2)*127;
     int a=(j?i%j:i)*4;return _sq(abs(i-512))+_sq(abs(j-512))>_sq(384)?a:int(sqrt((i+j)/2))^_cb((i-j)*2);
 /* BLUE */
     int a=(j?i%j:i)*4;int b=i+32;int c=j+32;return _sq(abs(i-512))+_sq(abs(j-512))>_sq(384)?a:int(sqrt((b+c)/2))^_cb((b-c)*2);
+
+//
+/* RED */
+    return (unsigned short)sqrt((double)(_sq(i-DIM/2)*_sq(j-DIM/2))*2.0);
+/* GREEN */
+    return (unsigned short)sqrt((double)(
+        (_sq(i-DIM/2)|_sq(j-DIM/2))*
+        (_sq(i-DIM/2)&_sq(j-DIM/2))
+    )); 
+/* BLUE */
+    return (unsigned short)sqrt((double)(_sq(i-DIM/2)&_sq(j-DIM/2))*2.0);
