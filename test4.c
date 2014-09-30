@@ -10,8 +10,8 @@ for(i=1;i<height-1;i++)
     //output_b[i][j]=0;
     int index = 0;
     int x=-1,y=-1;
-    for(;x<1;x++)
-        for(;y<1;y++)
+    for(;x<=1;x++)
+        for(;y<=1;y++)
         {
             output_r[i][j]+=r[i+x][j+y]*model[index];
             output_g[i][j]+=g[i+x][j+x]*model[index];
