@@ -18,6 +18,7 @@ for(i=1;i<height-1;i++)
             output_b[i][j]+=b[i+x][j+x]*model[index];
             index ++;
         }
+    output_r[i][j] /=16;output_g[i][j] /=16;output_b[i][j] /=16;
     output_r[i][j]=output_r[i][j]>255? 255: output_r[i][j];
     output_g[i][j]=output_g[i][j]>255? 255: output_g[i][j];
     output_b[i][j]=output_b[i][j]>255? 255: output_b[i][j];
