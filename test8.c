@@ -5,7 +5,7 @@ int R = 100;
 int point_x = width/2;
 int point_y = height/2;
 //int sx,sy;
-	for(i=1;i<height-11;i++)
+for(i=1;i<height-11;i++)
     for(j=1;j<width-11;j++)
 		{
 
